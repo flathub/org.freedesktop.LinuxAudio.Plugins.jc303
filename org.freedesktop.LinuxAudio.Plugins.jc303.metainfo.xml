@@ -3,17 +3,38 @@
     <id>org.freedesktop.LinuxAudio.Plugins.jc303</id>
     <extends>org.freedesktop.LinuxAudio.BaseExtension</extends>
     <name>jc303</name>
-    <summary>A Roland TB-303 clone, LV2/VST3 plugin</summary>
+    <summary>A Roland TB-303 clone, LV2/VST3/CLAP plugin</summary>
     <description>
       <p>JC303 is Bass Synthesizer Audio Plugin, a port of Robin
       Schmidt`s Open303, a Roland TB-303 clone plugin.</p>
-      <p>Comes in LV2 and VST3 format</p>
+      <p>Comes in LV2, CLAP and VST3 format</p>
     </description>
     <project_license>GPL-3.0-or-later</project_license>
     <metadata_license>CC0-1.0</metadata_license>
     <update_contact>_hub_AT_figuiere_net_</update_contact>
     <url type="homepage">https://midilab.co/jc303/</url>
     <releases>
-        <release version="0.9.1" date="2023-09-09" />
+      <release version="0.10.1" date="2024-01-21">
+        <description>
+          <ul>
+            <li>8 internal parameters for sound MOD, inspired on Devil
+            fish! (not a clone of devil fish!!! do not expect same
+            sound!)  Decay Knob: from 200ms...2000ms to 30ms
+            ... 3000ms</li>
+            <li>switch button for restore original internal parameters
+            of 303 clone sound.</li>
+            <li>Reinforce the Open303 powered by!</li>
+          </ul>
+        </description>
+      </release>
+      <release version="0.9.2" date="2023-12-30">
+        <description>
+          <ul>
+            <li>First internal parameter for synthesis hack: slide time</li>
+            <li>CLAP format support</li>
+          </ul>
+        </description>
+      </release>
+      <release version="0.9.1" date="2023-09-09" />
     </releases>
 </component>

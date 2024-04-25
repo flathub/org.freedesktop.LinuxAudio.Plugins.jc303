@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c6a6176..354d7a6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -45,7 +45,7 @@ FetchContent_Declare(juce-clap-extensions
+     GIT_SHALLOW    TRUE
+     GIT_CONFIG     advice.detachedHead=false)    # Disable detached HEAD warning for fetching a specific tag
+ 
+-
++add_subdirectory(lib/clap-juce-extensions EXCLUDE_FROM_ALL) 
+ FetchContent_MakeAvailable(juce)
+ FetchContent_MakeAvailable(juce-clap-extensions)
+ 
