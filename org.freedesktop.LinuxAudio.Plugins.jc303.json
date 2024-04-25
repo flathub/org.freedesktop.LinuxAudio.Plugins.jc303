@@ -4,7 +4,6 @@
     "runtime-version": "stable",
     "sdk": "org.freedesktop.Sdk//23.08",
     "build-extension": true,
-    "appstream-compose": false,
     "branch": "23.08",
     "build-options": {
         "prefix": "/app/extensions/Plugins/jc303"
@@ -28,15 +27,16 @@
                 "strip $FLATPAK_DEST/lv2/JC303.lv2/libJC303.so",
                 "cp -r JC303_artefacts/VST3/JC303.vst3 $FLATPAK_DEST/vst3",
                 "strip $FLATPAK_DEST/vst3/JC303.vst3/Contents/*/JC303.so",
-                "install -Dm644 org.freedesktop.LinuxAudio.Plugins.jc303.metainfo.xml -t $FLATPAK_DEST/share/metainfo",
-                "appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}"
+                "install -D JC303_artefacts/CLAP/JC303.clap -t $FLATPAK_DEST/clap",
+                "strip $FLATPAK_DEST/clap/JC303.clap",
+                "install -Dm644 org.freedesktop.LinuxAudio.Plugins.jc303.metainfo.xml -t $FLATPAK_DEST/share/metainfo"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/midilab/jc303.git",
-                    "tag": "v0.9.1",
-                    "commit": "cd26c0a5865b3e2f3e914a444103da11ab1df53e"
+                    "tag": "v0.10.1",
+                    "commit": "2080bb67587a29842ef9e8e1a3bb1bf4bc9b1bff"
                 },
                 {
                     "type": "git",
@@ -46,8 +46,14 @@
                     "dest": "lib/JUCE"
                 },
                 {
+                    "type": "git",
+                    "url": "https://github.com/free-audio/clap-juce-extensions.git",
+                    "commit": "54d83e121545490fdbb2d3dec3ba0c1da6005dde",
+                    "dest": "lib/clap-juce-extensions"
+                },
+                {
                     "type": "patch",
-                    "path": "patches/jc303-vst2.patch"
+                    "path": "patches/jc303-clap.patch"
                 },
                 {
                     "type": "file",
