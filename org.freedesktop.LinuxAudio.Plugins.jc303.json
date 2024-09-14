@@ -35,8 +35,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/midilab/jc303.git",
-                    "tag": "v0.11.0",
-                    "commit": "e7584894df3990bcf8258ce831a349f371b343c2"
+                    "tag": "v0.11.1",
+                    "commit": "6fc925db3bebcbb901adb55613ede6ea8f152cb8"
                 },
                 {
                     "type": "git",
