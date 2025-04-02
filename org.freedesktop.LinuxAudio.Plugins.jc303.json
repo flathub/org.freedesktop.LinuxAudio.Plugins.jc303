@@ -13,8 +13,16 @@
             "name": "jc303",
             "buildsystem": "cmake-ninja",
             "config-opts": [
+                "-DCMAKE_AR=/usr/bin/gcc-ar",
+                "-DCMAKE_NM=/usr/bin/gcc-nm",
+                "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
                 "-DFETCHCONTENT_FULLY_DISCONNECTED=ON"
             ],
+            "build-options": {
+                "env": {
+                    "CPM_SOURCE_CACHE": "/run/build/jc303/.cache/CPM"
+                }
+            },
             "cleanup": [
                 "/bin",
                 "/include",
@@ -23,11 +31,11 @@
             "post-install": [
                 "install -d $FLATPAK_DEST/lv2",
                 "install -d $FLATPAK_DEST/vst3",
-                "cp -r JC303_artefacts/LV2/JC303.lv2 $FLATPAK_DEST/lv2",
+                "cp -r JC303_artefacts/Release/LV2/JC303.lv2 $FLATPAK_DEST/lv2",
                 "strip $FLATPAK_DEST/lv2/JC303.lv2/libJC303.so",
-                "cp -r JC303_artefacts/VST3/JC303.vst3 $FLATPAK_DEST/vst3",
+                "cp -r JC303_artefacts/Release/VST3/JC303.vst3 $FLATPAK_DEST/vst3",
                 "strip $FLATPAK_DEST/vst3/JC303.vst3/Contents/*/JC303.so",
-                "install -D JC303_artefacts/CLAP/JC303.clap -t $FLATPAK_DEST/clap",
+                "install -D JC303_artefacts/Release/CLAP/JC303.clap -t $FLATPAK_DEST/clap",
                 "strip $FLATPAK_DEST/clap/JC303.clap",
                 "install -Dm644 org.freedesktop.LinuxAudio.Plugins.jc303.metainfo.xml -t $FLATPAK_DEST/share/metainfo"
             ],
@@ -35,8 +43,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/midilab/jc303.git",
-                    "tag": "v0.11.1",
-                    "commit": "6fc925db3bebcbb901adb55613ede6ea8f152cb8"
+                    "tag": "v0.12.0",
+                    "commit": "6e7caceb0d221682c301a0aab389691fd56644eb"
                 },
                 {
                     "type": "git",
@@ -48,12 +56,39 @@
                 {
                     "type": "git",
                     "url": "https://github.com/free-audio/clap-juce-extensions.git",
-                    "commit": "54d83e121545490fdbb2d3dec3ba0c1da6005dde",
-                    "dest": "lib/clap-juce-extensions"
+                    "commit": "a3227c52fa082d2df33f4377ed1e050dd8a52595",
+                    "dest": "lib/juce-clap-extensions-src"
                 },
                 {
-                    "type": "patch",
-                    "path": "patches/jc303-clap.patch"
+                    "type": "git",
+                    "url": "https://github.com/Chowdhury-DSP/chowdsp_utils.git",
+                    "commit": "b1ac3eb802171e65d22151fbadce81d1f300616d",
+                    "dest": "lib/chowdsp_utils-src"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/jatinchowdhury18/RTNeural.git",
+                    "commit": "04cb333bc4b174760958a77c7ce076eae38fe8e4",
+                    "dest": "lib/rtneural-src"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/cpm-cmake/CPM.cmake/releases/download/v0.38.6/CPM.cmake",
+                    "sha256": "11c3fa5f1ba14f15d31c2fb63dbc8628ee133d81c8d764caad9a8db9e0bacb07",
+                    "dest": ".cache/CPM/cpm",
+                    "dest-filename": "CPM_0.38.6.cmake"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/Chowdhury-DSP/math_approx.git",
+                    "commit": "0c68d4d17242d707ba07fa7f1901692b7ed72d58",
+                    "dest": "lib/math_approx-src"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/eyalamirmusic/Variant.git",
+                    "commit": "3fce49cfca50ba3b05026d41ffc4911a8e653378",
+                    "dest": "lib/ea_variant-src"
                 },
                 {
                     "type": "file",
