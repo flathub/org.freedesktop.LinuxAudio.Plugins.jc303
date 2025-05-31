@@ -43,8 +43,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/midilab/jc303.git",
-                    "tag": "v0.12.0",
-                    "commit": "6e7caceb0d221682c301a0aab389691fd56644eb"
+                    "tag": "v0.12.1",
+                    "commit": "2be813a8647cbd91178152b30da268cb61490705"
                 },
                 {
                     "type": "git",
@@ -62,7 +62,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/Chowdhury-DSP/chowdsp_utils.git",
-                    "commit": "b1ac3eb802171e65d22151fbadce81d1f300616d",
+                    "commit": "ffc70ba399f9afaeefb996eb14e55a1d487270b8",
                     "dest": "lib/chowdsp_utils-src"
                 },
                 {
