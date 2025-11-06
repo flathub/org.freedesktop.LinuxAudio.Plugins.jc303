@@ -43,14 +43,14 @@
                 {
                     "type": "git",
                     "url": "https://github.com/midilab/jc303.git",
-                    "tag": "v0.12.1",
-                    "commit": "2be813a8647cbd91178152b30da268cb61490705"
+                    "tag": "v0.12.3",
+                    "commit": "abac3b353a8eb505a45cbc884112da9e8b9b5888"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/juce-framework/JUCE.git",
-                    "tag": "7.0.5",
-                    "commit": "69795dc8e589a9eb5df251b6dd994859bf7b3fab",
+                    "tag": "8.0.5",
+                    "commit": "911529160bff3d154c9817a7060ff3dd91925dfb",
                     "dest": "lib/JUCE"
                 },
                 {

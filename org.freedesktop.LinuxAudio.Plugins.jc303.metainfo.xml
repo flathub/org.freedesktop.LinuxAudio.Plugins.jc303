@@ -14,6 +14,9 @@
     <update_contact>_hub_AT_figuiere_net_</update_contact>
     <url type="homepage">https://midilab.co/jc303/</url>
     <releases>
+      <release version="0.12.3" date="2025-11-05">
+        <url>https://github.com/midilab/jc303/releases/tag/v0.12.3</url>
+      </release>
       <release version="0.12.1" date="2025-05-30">
         <url>https://github.com/midilab/jc303/releases/tag/v0.12.1</url>
         <description>
